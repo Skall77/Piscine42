@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaudevar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 18:33:16 by aaudevar          #+#    #+#             */
-/*   Updated: 2022/08/30 08:36:01 by aaudevar         ###   ########.fr       */
+/*   Created: 2022/08/30 10:48:44 by aaudevar          #+#    #+#             */
+/*   Updated: 2022/08/30 12:23:44 by aaudevar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,18 @@ t_list	*ft_create_elem(void *data)
 	elem->next = NULL;
 	return (elem);
 }
+
+void	ft_list_push_back(t_list **begin_list, void *data)
+{
+	t_list	*new;
+
+	new = *begin_list;
+	if (new)
+	{
+		while (new->next)
+			new = new->next;
+		new->next = ft_create_elem(data);
+	}
+	else
+		*begin_list = ft_create_elem(data);
+}	
