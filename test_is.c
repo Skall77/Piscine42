@@ -16,7 +16,7 @@
 #include <bsd/string.h>
 #include <assert.h>
 #include <limits.h>
-#include "./includes/libft.h"
+#include "libft.h"
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
